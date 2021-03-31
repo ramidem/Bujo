@@ -52,15 +52,15 @@ export default class BujoWebview {
         case 'onInfo':
           if (!data.value) {
             return;
-          };
-          
+          }
+
           vscode.window.showInformationMessage(data.value);
           break;
         case 'onError':
           if (!data.value) {
             return;
-          };
-          
+          }
+
           vscode.window.showErrorMessage(data.value);
           break;
       }
@@ -69,15 +69,15 @@ export default class BujoWebview {
 
   private _getHtmlForWebview(webview: vscode.Webview) {
     const stylesResetUri = webview.asWebviewUri(
-      vscode.Uri.joinPath(this._extensionUri, 'media', 'reset.css')
+      vscode.Uri.joinPath(this._extensionUri, 'media', 'reset.css'),
     );
 
     const stylesMainUri = webview.asWebviewUri(
-      vscode.Uri.joinPath(this._extensionUri, 'media', 'vscode.css')
+      vscode.Uri.joinPath(this._extensionUri, 'media', 'vscode.css'),
     );
 
     const scriptUri = webview.asWebviewUri(
-      vscode.Uri.joinPath(this._extensionUri, 'out/compiled', 'helloBujo.js')
+      vscode.Uri.joinPath(this._extensionUri, 'out/compiled', 'helloBujo.js'),
     );
 
     const nonce = getNonce();
