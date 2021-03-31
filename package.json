@@ -18,13 +18,20 @@
 		"test": "node ./out/test/runTest.js"
 	},
 	"activationEvents": [
+		"onCommand:bujo.start",
 		"onCommand:bujo.open"
 	],
 	"contributes": {
 		"commands": [
 			{
+				"command": "bujo.start",
+				"category": "Bujo",
+				"title": "Start"
+			},
+			{
 				"command": "bujo.open",
-				"title": "Bujo"
+				"category": "Bujo",
+				"title": "Open"
 			}
 		]
 	},

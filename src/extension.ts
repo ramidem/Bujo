@@ -1,13 +1,18 @@
 import * as vscode from 'vscode';
+import { BujoWebview } from './ui';
 
 export function activate(context: vscode.ExtensionContext) {
-	console.log('Congratulations, your extension "bujo" is now active!');
+	context.subscriptions.push(
+		vscode.commands.registerCommand('bujo.start', () => {
+			BujoWebview.createOrShow(context.extensionUri);
+		}),
+	);
 
-	let disposable = vscode.commands.registerCommand('bujo.open', () => {
-		vscode.window.showInformationMessage('Hello Bujo!');
-	});
-
-	context.subscriptions.push(disposable);
+	context.subscriptions.push(
+		vscode.commands.registerCommand('bujo.open', () => {
+			vscode.window.showInformationMessage('Hello Bujo!');
+		}),
+	);
 }
 
-export function deactivate() {}
+export function deactivate() { }
