@@ -77,7 +77,7 @@ export default class BujoWebview {
     );
 
     const scriptUri = webview.asWebviewUri(
-      vscode.Uri.joinPath(this._extensionUri, 'out/compiled', 'helloBujo.js'),
+      vscode.Uri.joinPath(this._extensionUri, 'out/compiled', 'helloBujo.ts'),
     );
 
     const nonce = getNonce();
